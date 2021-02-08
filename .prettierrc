@@ -1,4 +1,6 @@
 {
-  "arrowParens": "avoid",
-  "semi": false
+    "arrowParens": "avoid",
+    "semi": false,
+    "printWidth": 1000,
+    "tabWidth": 4
 }
