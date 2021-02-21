@@ -16,9 +16,7 @@ import Navigation from "./navigation"
 
 import "../styles/main.css"
 
-const Main = styled.main`
-    padding: 1rem 2rem;
-`
+const Main = styled.main``
 
 const Layout = ({ children }) => {
     const data = useStaticQuery(graphql`

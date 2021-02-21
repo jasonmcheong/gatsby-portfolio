@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { AiOutlineHome, AiOutlineIdcard, AiOutlineTrophy, AiOutlineUnorderedList, AiOutlineMail, AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai"
+import { AiOutlineHome, AiOutlineIdcard, AiOutlineTrophy, AiOutlineUnorderedList, AiOutlineMail, AiFillLinkedin, AiOutlineGithub } from "react-icons/ai"
 
 const Container = styled.nav`
     display: grid;
@@ -72,10 +72,10 @@ const Navigation = () => (
         <Footer>
             <SocialMedia>
                 <AiOutlineMail />
-                <AiOutlineLinkedin />
-                <AiOutlineGithub />
+                <AiFillLinkedin style={{ fill: "#0077B5" }} />
+                <AiOutlineGithub style={{ fill: "#171516" }} />
             </SocialMedia>
-            <Copyright>© {new Date().getFullYear()} All right reseverd.</Copyright>
+            <Copyright>© {new Date().getFullYear()} All rights reseverd.</Copyright>
         </Footer>
     </Container>
 )
