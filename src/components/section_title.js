@@ -1,13 +1,19 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import styled from "styled-components"
 
-const Icon = styled(Img)`
-    width: 2rem;
-    height: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+const Container = styled.div`
+    position: relative;
+`
+
+const Dots = styled.img`
+    position: absolute;
+    top: 0;
+    left: 0;
+`
+
+const Title = styled.h2`
+    padding: 2rem 0 0 1.75rem;
 `
 
 const SectionTitle = props => {
@@ -18,11 +24,12 @@ const SectionTitle = props => {
             }
         }
     `)
+
     return (
-        <div>
-            <img src={data.file.publicURL} alt="9 dots icon" />
-            <h2>{props.title}</h2>
-        </div>
+        <Container>
+            <Dots src={data.file.publicURL} alt="9 dots icon" />
+            <Title>{props.title}</Title>
+        </Container>
     )
 }
 
