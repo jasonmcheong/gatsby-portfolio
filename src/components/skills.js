@@ -10,31 +10,50 @@ const Container = styled.section`
 
 const SkillWrapper = styled.div`
     display: grid;
+    gap: 3rem 1rem;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+`
+
+const Skill = styled.div`
+    text-align: center;
+`
+
+const Icon = styled.img`
+    width: 7rem;
+    height: 7rem;
 `
 
 const Skills = () => {
     const data = useStaticQuery(graphql`
         query {
-            angularjs: file(relativePath: { eq: "angularjs-icon.svg" }) {
+            AngularJS: file(relativePath: { eq: "angularjs-icon.svg" }) {
                 publicURL
+                name
             }
-            azure: file(relativePath: { eq: "azure-icon.svg" }) {
+            Azure: file(relativePath: { eq: "azure-icon.svg" }) {
                 publicURL
+                name
             }
-            javascript: file(relativePath: { eq: "javascript-icon.svg" }) {
+            JavaScript: file(relativePath: { eq: "javascript-icon.svg" }) {
                 publicURL
+                name
             }
-            powershell: file(relativePath: { eq: "powershell-icon.svg" }) {
+            PowerShell: file(relativePath: { eq: "powershell-icon.svg" }) {
                 publicURL
+                name
             }
-            react: file(relativePath: { eq: "react-icon.svg" }) {
+            React: file(relativePath: { eq: "react-icon.svg" }) {
                 publicURL
+                name
             }
-            sass: file(relativePath: { eq: "sass-icon.svg" }) {
+            SASS: file(relativePath: { eq: "sass-icon.svg" }) {
                 publicURL
+                name
             }
-            servicenow: file(relativePath: { eq: "servicenow-icon.svg" }) {
+            ServiceNow: file(relativePath: { eq: "servicenow-icon.svg" }) {
                 publicURL
+                name
             }
         }
     `)
@@ -43,8 +62,14 @@ const Skills = () => {
         <Container>
             <SectionTitle title="Skills" />
             <SkillWrapper>
-                <img src={data.angularjs.publicURL} />
-                <h3>AngularJS</h3>
+                {Object.keys(data).map(key => {
+                    return (
+                        <Skill key={data[key].name}>
+                            <Icon src={data[key].publicURL} alt={data[key].name} />
+                            <h3>{key}</h3>
+                        </Skill>
+                    )
+                })}
             </SkillWrapper>
         </Container>
     )
