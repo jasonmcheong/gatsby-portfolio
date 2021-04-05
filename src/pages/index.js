@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import Home from "../components/home"
 import About from "../components/about"
 import Experience from "../components/experience"
+import Projects from "../components/projects"
 import Skills from "../components/skills"
 
 const IndexPage = () => (
@@ -15,6 +16,7 @@ const IndexPage = () => (
         <Home />
         <About />
         <Experience />
+        <Projects />
         <Skills />
         <SEO title="Home" />
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
