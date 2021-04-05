@@ -16,6 +16,8 @@ const projects = [
     },
 ]
 
+// TODO: Create a "Project" component to house the listed information
+
 const Projects = () => (
     <Container>
         <SectionTitle title="Projects" />

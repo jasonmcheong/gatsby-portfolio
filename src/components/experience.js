@@ -51,6 +51,8 @@ const XP = [
     },
 ]
 
+// TODO: Create a "Job" component to house the listed information
+
 const Experience = () => (
     <Container>
         <SectionTitle title="Experience" />
