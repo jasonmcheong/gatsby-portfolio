@@ -20,7 +20,8 @@ const Title = styled.h2`
 const SectionTitle = props => {
     const data = useStaticQuery(graphql`
         query {
-            file(relativePath: { eq: "dots.svg" }) {
+            dots: file(relativePath: { eq: "dots-icon.svg" }) {
+                name
                 publicURL
             }
         }
@@ -28,7 +29,7 @@ const SectionTitle = props => {
 
     return (
         <Container>
-            <Dots src={data.file.publicURL} alt="9 dots icon" />
+            <Dots src={data.dots.publicURL} alt={data.dots.name} />
             <Title>{props.title}</Title>
         </Container>
     )
