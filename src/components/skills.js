@@ -1,5 +1,5 @@
-import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
 import SectionTitle from "./section_title"
