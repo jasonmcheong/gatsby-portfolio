@@ -2,28 +2,24 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
-import SectionTitle from "./section_title"
+import SectionTitle from "components/section_title"
 
 const Container = styled.section`
     padding: 2rem;
 `
-
 const SkillWrapper = styled.div`
     display: grid;
     gap: 3rem 1rem;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
 `
-
 const Skill = styled.div`
     text-align: center;
 `
-
 const Icon = styled.img`
     width: 7rem;
     height: 7rem;
 `
-
 const Skills = () => {
     const data = useStaticQuery(graphql`
         query {

@@ -12,9 +12,7 @@ const Container = styled.section`
     background: PapayaWhip;
     height: 100vh;
 `
-
 const Center = styled.div``
-
 const Headshot = styled(Img)`
     width: 10rem;
     height: 10rem;
@@ -22,14 +20,11 @@ const Headshot = styled(Img)`
     transform: translateX(-50%);
     margin-bottom: 2rem;
 `
-
 const Name = styled.h1``
-
 const Title = styled.p`
     font-size: 2.3rem;
     margin-top: 0.5rem;
 `
-
 const SocialMedia = styled.div`
     width: 100%;
     display: flex;
@@ -37,7 +32,6 @@ const SocialMedia = styled.div`
     font-size: 4rem;
     margin: 2rem auto;
 `
-
 const Home = () => {
     const data = useStaticQuery(graphql`
         query {

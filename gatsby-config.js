@@ -29,6 +29,7 @@ module.exports = {
             },
         },
         `gatsby-plugin-styled-components`,
+        `gatsby-plugin-resolve-src`,
         {
             resolve: `gatsby-plugin-web-font-loader`,
             options: {

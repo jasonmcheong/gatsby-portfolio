@@ -6,17 +6,14 @@ const Container = styled.div`
     margin-bottom: 3rem;
     position: relative;
 `
-
 const Dots = styled.img`
     position: absolute;
     top: 0;
     left: 0;
 `
-
 const Title = styled.h2`
     padding: 2rem 0 0 1.75rem;
 `
-
 const SectionTitle = props => {
     const data = useStaticQuery(graphql`
         query {

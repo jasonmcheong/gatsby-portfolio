@@ -1,10 +1,11 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
+import { v4 as uuidv4 } from "uuid"
 
 import { AiOutlineLink } from "react-icons/ai"
 
-import SectionTitle from "../components/section_title"
+import SectionTitle from "components/section_title"
 
 const Container = styled.section`
     padding: 1.5rem;
@@ -119,7 +120,7 @@ const Experience = () => {
             <Jobs>
                 {jobs.map(job => {
                     return (
-                        <Job>
+                        <Job key={uuidv4()}>
                             <Bullseye src={data.bullseye.publicURL} alt={data.bullseye.name} />
                             <Company>{job.company}</Company>
                             <Timeline>{job.timeline}</Timeline>
@@ -127,7 +128,7 @@ const Experience = () => {
                             <Projects>
                                 {job.projects.map(project => {
                                     return (
-                                        <Project>
+                                        <Project key={uuidv4()}>
                                             {project.link ? (
                                                 <ProjectLink href={project.link} target="_blank" rel="noreferrer">
                                                     <ProjectTitle>
@@ -139,7 +140,7 @@ const Experience = () => {
                                             )}
                                             <ProjectDescription>{project.description}</ProjectDescription>
                                             {project.technologies.map(technology => {
-                                                return <ProjectTechnology>{technology}</ProjectTechnology>
+                                                return <ProjectTechnology key={uuidv4()}>{technology}</ProjectTechnology>
                                             })}
                                         </Project>
                                     )

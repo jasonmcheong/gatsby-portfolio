@@ -10,18 +10,15 @@ const Container = styled.section`
     align-items: center;
     background: lightgrey;
 `
-
 const Description = styled.div`
     width: 100%;
     background: #fff;
     border-radius: 20px;
     padding: 2rem;
 `
-
 const Hook = styled.p`
     margin-bottom: 3rem;
 `
-
 const Button = styled.button`
     width: 100%;
     margin-top: 2rem;
@@ -31,7 +28,6 @@ const Button = styled.button`
     border: none;
     border-radius: 25px;
 `
-
 const About = () => (
     <Container>
         <Description>

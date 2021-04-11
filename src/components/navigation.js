@@ -8,37 +8,31 @@ const Container = styled.nav`
     height: 100vh;
     padding: 2rem;
 `
-
 const Heading = styled.h1`
     align-self: center;
 `
-
 const List = styled.ul`
     display: grid;
     gap: 0.5rem;
     margin: 0;
 `
-
 const ListItem = styled.li`
     display: flex;
     justify-content: flex-start;
     align-items: center;
     font-size: 3.2rem;
 `
-
 const Content = styled.span`
     font-size: 2.4rem;
     font-weight: bold;
     margin-left: 1.5rem;
 `
-
 const Footer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
 `
-
 const SocialMedia = styled.div`
     width: 20rem;
     display: flex;
@@ -46,7 +40,6 @@ const SocialMedia = styled.div`
     font-size: 4rem;
     margin-bottom: 2rem;
 `
-
 const Copyright = styled.span`
     font-size: 1.2rem;
     text-align: center;

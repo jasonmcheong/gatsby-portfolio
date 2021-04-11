@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import { v4 as uuidv4 } from "uuid"
 
-import SectionTitle from "../components/section_title"
+import SectionTitle from "components/section_title"
 
 const Container = styled.section`
     padding: 2rem;
 `
-
 const projects = [
     {
         name: "Kijiji Reposter (Work in Progress)",
@@ -23,12 +23,12 @@ const Projects = () => (
         <SectionTitle title="Projects" />
         {projects.map(project => {
             return (
-                <div>
+                <div key={uuidv4()}>
                     <h4>{project.name}</h4>
                     <a href={project.link}></a>
                     <p>{project.description}</p>
                     {project.stack.map(tech => {
-                        return <p>{tech}</p>
+                        return <p key={uuidv4()}>{tech}</p>
                     })}
                 </div>
             )
