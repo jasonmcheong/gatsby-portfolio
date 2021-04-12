@@ -1,15 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Image from "components/Utils/image"
+import SEO from "components/Utils/seo"
 
-import Layout from "../components/layout"
-import Home from "../components/home"
-import About from "../components/about"
-import Experience from "../components/experience"
-import Projects from "../components/projects"
-import Skills from "../components/skills"
+import Layout from "components/Layout"
+import Home from "components/Home"
+import About from "components/About"
+import Experience from "components/Experience"
+import Projects from "components/Projects"
+import Skills from "components/Skills"
 
 const IndexPage = () => (
     <Layout>
@@ -23,7 +23,6 @@ const IndexPage = () => (
             <Image />
         </div>
         <Link to="/page-2/">Go to page 2</Link> <br />
-        <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
     </Layout>
 )
 

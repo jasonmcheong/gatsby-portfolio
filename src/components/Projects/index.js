@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { v4 as uuidv4 } from "uuid"
 
-import SectionTitle from "components/section_title"
+import SectionTitle from "components/Utils/section_title"
 
 const Container = styled.section`
     padding: 2rem;

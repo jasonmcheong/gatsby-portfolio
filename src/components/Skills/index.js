@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
-import SectionTitle from "components/section_title"
+import SectionTitle from "components/Utils/section_title"
 
 const Container = styled.section`
     padding: 2rem;
