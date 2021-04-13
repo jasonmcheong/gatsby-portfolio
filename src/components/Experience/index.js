@@ -3,9 +3,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { v4 as uuidv4 } from "uuid"
 
-import { AiOutlineLink } from "react-icons/ai"
-
 import SectionTitle from "components/Utils/section_title"
+import Project from "components/Projects/project"
 
 const Container = styled.section`
     padding: 1.5rem;
@@ -14,20 +13,17 @@ const Jobs = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 2rem 0;
-    border-radius: 2rem;
-    background: red;
 `
 const Job = styled.div`
     overflow: hidden;
-    padding-left: 5rem;
+    padding-left: 3.5rem;
     position: relative;
 
     &:before {
         content: "";
         position: absolute;
         top: 2rem;
-        left: 2.4rem;
+        left: 0.9rem;
         width: 2px;
         height: 100%;
         background: #000;
@@ -38,26 +34,22 @@ const Bullseye = styled.img`
     width: 2rem;
     height: 2rem;
     top: 0.2rem;
-    left: 1.5rem;
+    left: 0rem;
 `
-const Company = styled.h3``
-const Timeline = styled.p``
+const Company = styled.h3`
+    margin-bottom: 0.3rem;
+`
 const Role = styled.span``
+const Timeline = styled.p`
+    opacity: 0.8;
+    margin-top: 0.7rem;
+`
 const Projects = styled.div`
     display: grid;
     grid-template-columns;
-    gap: 1rem;
+    gap: 2rem;
     margin-top: 2rem;
 `
-const Project = styled.div``
-const ProjectTitle = styled.h4`
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-`
-const ProjectLink = styled.a``
-const ProjectDescription = styled.p``
-const ProjectTechnology = styled.p``
 
 const jobs = [
     {
@@ -123,27 +115,11 @@ const Experience = () => {
                         <Job key={uuidv4()}>
                             <Bullseye src={data.bullseye.publicURL} alt={data.bullseye.name} />
                             <Company>{job.company}</Company>
-                            <Timeline>{job.timeline}</Timeline>
                             <Role>{job.role}</Role>
+                            <Timeline>{job.timeline}</Timeline>
                             <Projects>
                                 {job.projects.map(project => {
-                                    return (
-                                        <Project key={uuidv4()}>
-                                            {project.link ? (
-                                                <ProjectLink href={project.link} target="_blank" rel="noreferrer">
-                                                    <ProjectTitle>
-                                                        {project.name} <AiOutlineLink />
-                                                    </ProjectTitle>
-                                                </ProjectLink>
-                                            ) : (
-                                                <ProjectTitle>{project.name}</ProjectTitle>
-                                            )}
-                                            <ProjectDescription>{project.description}</ProjectDescription>
-                                            {project.technologies.map(technology => {
-                                                return <ProjectTechnology key={uuidv4()}>{technology}</ProjectTechnology>
-                                            })}
-                                        </Project>
-                                    )
+                                    return <Project key={uuidv4()} project={project} />
                                 })}
                             </Projects>
                         </Job>

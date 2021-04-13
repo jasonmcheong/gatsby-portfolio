@@ -5,7 +5,7 @@ import styled from "styled-components"
 import SectionTitle from "components/Utils/section_title"
 
 const Container = styled.section`
-    padding: 2rem;
+    padding: 1.5rem;
 `
 const SkillWrapper = styled.div`
     display: grid;
@@ -20,6 +20,10 @@ const Icon = styled.img`
     width: 7rem;
     height: 7rem;
 `
+const Title = styled.h3`
+    margin-top: 0.5rem;
+`
+
 const Skills = () => {
     const data = useStaticQuery(graphql`
         query {
@@ -47,7 +51,7 @@ const Skills = () => {
                 publicURL
                 name
             }
-            ServiceNow: file(relativePath: { eq: "servicenow-icon.svg" }) {
+            ServiceNow: file(relativePath: { eq: "servicenow-icon.jpg" }) {
                 publicURL
                 name
             }
@@ -62,7 +66,7 @@ const Skills = () => {
                     return (
                         <Skill key={data[key].name}>
                             <Icon src={data[key].publicURL} alt={data[key].name} />
-                            <h3>{key}</h3>
+                            <Title>{key}</Title>
                         </Skill>
                     )
                 })}

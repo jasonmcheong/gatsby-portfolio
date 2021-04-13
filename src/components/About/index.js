@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const Container = styled.section`
     width: 100%;
-    padding: 2rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

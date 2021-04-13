@@ -35,7 +35,7 @@ const SocialMedia = styled.div`
 const Home = () => {
     const data = useStaticQuery(graphql`
         query {
-            file(relativePath: { eq: "gatsby-icon.png" }) {
+            headshot: file(relativePath: { eq: "gatsby-icon.png" }) {
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid
@@ -45,10 +45,12 @@ const Home = () => {
         }
     `)
 
+    console.log(data)
+
     return (
         <Container>
             <Center>
-                <Headshot fluid={data.file.childImageSharp.fluid} alt="Jason Cheong Headshot" />
+                <Headshot fluid={data.headshot.childImageSharp.fluid} alt="Jason Cheong Headshot" />
                 <Name>Jason Cheong</Name>
                 <Title>I'm a developer</Title>
                 <SocialMedia>
