@@ -1,21 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 
-const Container = styled.section`
-    width: 100%;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: lightgrey;
-`
-const Description = styled.div`
-    width: 100%;
-    background: #fff;
-    border-radius: 20px;
-    padding: 2rem;
-`
+import Container from "components/Utils/container"
+
+const Description = styled.div``
 const Hook = styled.p`
     margin-bottom: 3rem;
 `
@@ -29,7 +17,7 @@ const Button = styled.button`
     border-radius: 25px;
 `
 const About = () => (
-    <Container>
+    <Container title="About">
         <Description>
             <Hook>I couldn't stop...</Hook>
             <p>The pounding of each keystroke echoes throughout. Error on line 22 didn't even stand a chance. With coffee coursing through my system, pure bliss was finally achieved the "zone/coding high". Through all the chaos...a new application was born.</p>

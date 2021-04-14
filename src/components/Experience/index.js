@@ -3,19 +3,19 @@ import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { v4 as uuidv4 } from "uuid"
 
+import Container from "components/Utils/container"
 import SectionTitle from "components/Utils/section_title"
 import Project from "components/Projects/project"
 
-const Container = styled.section`
-    padding: 1.5rem;
-`
+// const Container = styled.section`
+//     padding: 1.5rem;
+// `
 const Jobs = styled.div`
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 3rem;
 `
 const Job = styled.div`
-    overflow: hidden;
     padding-left: 3.5rem;
     position: relative;
 
@@ -25,7 +25,7 @@ const Job = styled.div`
         top: 2rem;
         left: 0.9rem;
         width: 2px;
-        height: 100%;
+        height: calc(100% - 2rem);
         background: #000;
     }
 `
@@ -33,21 +33,18 @@ const Bullseye = styled.img`
     position: absolute;
     width: 2rem;
     height: 2rem;
-    top: 0.2rem;
+    top: 0.1rem;
     left: 0rem;
 `
-const Company = styled.h3`
-    margin-bottom: 0.3rem;
-`
+const Company = styled.h3``
 const Role = styled.span``
 const Timeline = styled.p`
     opacity: 0.8;
-    margin-top: 0.7rem;
 `
 const Projects = styled.div`
     display: grid;
     grid-template-columns;
-    gap: 2rem;
+    gap: 3rem;
     margin-top: 2rem;
 `
 
@@ -59,18 +56,18 @@ const jobs = [
         projects: [
             {
                 name: "VisitorValet",
-                description: "Visitor management system that saved the company x amount of dollars",
+                description: "An enterprise digital visitor management system that streamlines the process of screening, tracking and managing visitors accross multiple locations.",
                 link: "visitorvalet.com",
                 technologies: ["AngularJS", "ServiceNow"],
             },
             {
                 name: "Internal Web Applications",
-                description: "Built using ServiceNow",
-                technologies: ["AngularJS", "ServiceNow"],
+                description: "Built numerous internal web applications which harness the power of the ServiceNow platform to satisfy complex business needs.",
+                technologies: ["AngularJS", "PowerShell", "ServiceNow"],
             },
             {
-                name: "Automated Processes",
-                description: "Automations that will automate",
+                name: "Automations",
+                description: "Built and maintained CI/CD pipelines to increase productivity and eliminate manual processes.",
                 technologies: ["PowerShell", "ServiceNow", "Azure", "Azure DevOps"],
             },
         ],
@@ -82,13 +79,13 @@ const jobs = [
         projects: [
             {
                 name: "Pegasus Imagery",
-                description: "Static site using React and Wordpress. Basic information site",
+                description: "A static site using the single page application architecture to deliver an app-like experience to all device platforms.",
                 link: "jasonmcheong.com/pegaus-imagery",
                 technologies: ["React", "WordPress"],
             },
             {
                 name: "Promise Project",
-                description: "Progressive web application that has offline capability, used to retrieve user information on who promises to learn Esperanto",
+                description: "A progressive web application with customizable questions that gathers and stores a user's promise to learn Esperanto.",
                 link: "jasonmcheong.com/ea-mondo",
                 technologies: ["React", "WordPress", "Amazon Web Services"],
             },
@@ -107,8 +104,7 @@ const Experience = () => {
     `)
 
     return (
-        <Container>
-            <SectionTitle title="Experience" />
+        <Container title="Experience">
             <Jobs>
                 {jobs.map(job => {
                     return (

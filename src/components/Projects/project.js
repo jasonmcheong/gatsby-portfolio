@@ -6,6 +6,7 @@ import styled from "styled-components"
 const Container = styled.div`
     background: #ffe4b5;
     border-radius: 7px;
+    box-shadow: 0px 5px 12px 4px #ebebeb;
 `
 const Screenshot = styled(Img)`
     height: 15rem;

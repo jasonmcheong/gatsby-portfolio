@@ -2,11 +2,8 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
-import SectionTitle from "components/Utils/section_title"
+import Container from "components/Utils/container"
 
-const Container = styled.section`
-    padding: 1.5rem;
-`
 const SkillWrapper = styled.div`
     display: grid;
     gap: 3rem 1rem;
@@ -59,8 +56,7 @@ const Skills = () => {
     `)
 
     return (
-        <Container>
-            <SectionTitle title="Skills" />
+        <Container title="Skills">
             <SkillWrapper>
                 {Object.keys(data).map(key => {
                     return (
