@@ -3,10 +3,7 @@ import styled from "styled-components"
 
 import Container from "components/Utils/container"
 
-const Description = styled.div``
-const Hook = styled.p`
-    margin-bottom: 3rem;
-`
+const Description = styled.p``
 const Button = styled.button`
     width: 100%;
     margin-top: 2rem;
@@ -16,14 +13,11 @@ const Button = styled.button`
     border: none;
     border-radius: 25px;
 `
+
 const About = () => (
     <Container title="About">
-        <Description>
-            <Hook>I couldn't stop...</Hook>
-            <p>The pounding of each keystroke echoes throughout. Error on line 22 didn't even stand a chance. With coffee coursing through my system, pure bliss was finally achieved the "zone/coding high". Through all the chaos...a new application was born.</p>
-            <p>Do it once, do it right. devloping, testing and maintaining apps that spans over 100s of locations accross the organization</p>
-            <Button>Download CV</Button>
-        </Description>
+        <Description>Hi I'm Jason, a programmer with a deep passion for web development, with the goal of one day becoming the ultimate tech guru. What facinates me the most about this industry is the community and the ever growing innovations. The programming community is just a vast wealth of knowledge to learn from and I take an active part in sharing my accumulated knowledge with others to empower them to grow alongside me. With new technologies popping up every day, it's hard not to see how they can bring value to myself or my team. I've since embraced the power of automation and try to incorporate it into my daily workflow whenever possible so I can focus on doing what I do best.</Description>
+        <Button>Download CV</Button>
     </Container>
 )
 

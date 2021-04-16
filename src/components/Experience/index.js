@@ -4,12 +4,8 @@ import styled from "styled-components"
 import { v4 as uuidv4 } from "uuid"
 
 import Container from "components/Utils/container"
-import SectionTitle from "components/Utils/section_title"
 import Project from "components/Projects/project"
 
-// const Container = styled.section`
-//     padding: 1.5rem;
-// `
 const Jobs = styled.div`
     display: grid;
     grid-template-columns: 1fr;
