@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { v4 as uuidv4 } from "uuid"
 
 import Container from "components/Utils/container"
+import Modal from "components/Utils/modal"
 import Project from "components/Projects/project"
 
 const Jobs = styled.div`
@@ -99,6 +100,8 @@ const Experience = () => {
         }
     `)
 
+    const [modal, setModal] = useState()
+
     return (
         <Container title="Experience">
             <Jobs>
@@ -110,8 +113,17 @@ const Experience = () => {
                             <Role>{job.role}</Role>
                             <Timeline>{job.timeline}</Timeline>
                             <Projects>
-                                {job.projects.map(project => {
-                                    return <Project key={uuidv4()} project={project} />
+                                {job.projects.map((project, index) => {
+                                    var uuid = uuidv4()
+                                    return (
+                                        <div key={uuid}>
+                                            <Modal open={index === modal} close={() => setModal()}>
+                                                <h2>Title</h2>
+                                            </Modal>
+                                            <h2 onClick={() => setModal(index)}>Open</h2>
+                                            <Project project={project} />
+                                        </div>
+                                    )
                                 })}
                             </Projects>
                         </Job>
