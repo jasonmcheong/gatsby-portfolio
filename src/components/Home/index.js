@@ -32,6 +32,8 @@ const SocialMedia = styled.div`
     font-size: 4rem;
     margin: 2rem auto;
 `
+const Link = styled.a``
+
 const Home = () => {
     const data = useStaticQuery(graphql`
         query {
@@ -45,18 +47,22 @@ const Home = () => {
         }
     `)
 
-    console.log(data)
-
     return (
         <Container>
             <Center>
                 <Headshot fluid={data.headshot.childImageSharp.fluid} alt="Jason Cheong Headshot" />
                 <Name>Jason Cheong</Name>
-                <Title>I'm a developer</Title>
+                <Title>Aspiring tech guru</Title>
                 <SocialMedia>
-                    <AiOutlineMail />
-                    <AiFillLinkedin style={{ fill: "#0077B5" }} />
-                    <AiOutlineGithub style={{ fill: "#171516" }} />
+                    <Link href="mailto:jasonmcheong@gmail.com">
+                        <AiOutlineMail fill="#000000" />
+                    </Link>
+                    <Link href="https://www.linkedin.com/in/jasonmcheong/" target="_blank" rel="noreferrer">
+                        <AiFillLinkedin fill="#0077B5" />
+                    </Link>
+                    <Link href="https://github.com/jasonmcheong" target="_blank" rel="noreferrer">
+                        <AiOutlineGithub fill="#171516" />
+                    </Link>
                 </SocialMedia>
             </Center>
         </Container>

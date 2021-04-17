@@ -40,6 +40,7 @@ const SocialMedia = styled.div`
     font-size: 4rem;
     margin-bottom: 2rem;
 `
+const Link = styled.a``
 const Copyright = styled.span`
     font-size: 1.2rem;
     text-align: center;
@@ -67,9 +68,15 @@ const Navigation = () => (
         </List>
         <Footer>
             <SocialMedia>
-                <AiOutlineMail />
-                <AiFillLinkedin style={{ fill: "#0077B5" }} />
-                <AiOutlineGithub style={{ fill: "#171516" }} />
+                <Link href="mailto:jasonmcheong@gmail.com">
+                    <AiOutlineMail fill="#000000" />
+                </Link>
+                <Link href="https://www.linkedin.com/in/jasonmcheong/" target="_blank" rel="noreferrer">
+                    <AiFillLinkedin fill="#0077B5" />
+                </Link>
+                <Link href="https://github.com/jasonmcheong" target="_blank" rel="noreferrer">
+                    <AiOutlineGithub fill="#171516" />
+                </Link>
             </SocialMedia>
             <Copyright>© {new Date().getFullYear()} All rights reseverd.</Copyright>
         </Footer>

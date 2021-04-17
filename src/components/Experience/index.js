@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { v4 as uuidv4 } from "uuid"
 
 import Container from "components/Utils/container"
-import Modal from "components/Utils/modal"
 import Project from "components/Projects/project"
 
 const Jobs = styled.div`
@@ -52,17 +51,20 @@ const jobs = [
         timeline: "2019 - Present",
         projects: [
             {
+                id: uuidv4(),
                 name: "VisitorValet",
                 description: "An enterprise digital visitor management system that streamlines the process of screening, tracking and managing visitors accross multiple locations.",
-                link: "visitorvalet.com",
+                link: "https://www.visitorvalet.com/",
                 technologies: ["AngularJS", "ServiceNow"],
             },
             {
+                id: uuidv4(),
                 name: "Internal Web Applications",
                 description: "Built numerous internal web applications which harness the power of the ServiceNow platform to satisfy complex business needs.",
                 technologies: ["AngularJS", "PowerShell", "ServiceNow"],
             },
             {
+                id: uuidv4(),
                 name: "Automations",
                 description: "Built and maintained CI/CD pipelines to increase productivity and eliminate manual processes.",
                 technologies: ["PowerShell", "ServiceNow", "Azure", "Azure DevOps"],
@@ -75,15 +77,19 @@ const jobs = [
         timeline: "2019",
         projects: [
             {
+                id: uuidv4(),
                 name: "Pegasus Imagery",
                 description: "A static site using the single page application architecture to deliver an app-like experience to all device platforms.",
-                link: "jasonmcheong.com/pegaus-imagery",
+                link: "https://jasonmcheong.com/pegasus/",
+                github: "https://github.com/jasonmcheong/pegasus-react",
                 technologies: ["React", "WordPress"],
             },
             {
+                id: uuidv4(),
                 name: "Promise Project",
                 description: "A progressive web application with customizable questions that gathers and stores a user's promise to learn Esperanto.",
-                link: "jasonmcheong.com/ea-mondo",
+                link: "https://ea-mondo.org/pp/multi/",
+                github: "https://github.com/jasonmcheong/promise-project",
                 technologies: ["React", "WordPress", "Amazon Web Services"],
             },
         ],
@@ -100,8 +106,6 @@ const Experience = () => {
         }
     `)
 
-    const [modal, setModal] = useState()
-
     return (
         <Container title="Experience">
             <Jobs>
@@ -113,17 +117,8 @@ const Experience = () => {
                             <Role>{job.role}</Role>
                             <Timeline>{job.timeline}</Timeline>
                             <Projects>
-                                {job.projects.map((project, index) => {
-                                    var uuid = uuidv4()
-                                    return (
-                                        <div key={uuid}>
-                                            <Modal open={index === modal} close={() => setModal()}>
-                                                <h2>Title</h2>
-                                            </Modal>
-                                            <h2 onClick={() => setModal(index)}>Open</h2>
-                                            <Project project={project} />
-                                        </div>
-                                    )
+                                {job.projects.map(project => {
+                                    return <Project key={uuidv4()} project={project} />
                                 })}
                             </Projects>
                         </Job>

@@ -8,7 +8,7 @@ const projects = [
     {
         name: "Kijiji Ad Reposter (Work in Progress)",
         description: "A fun little automation that bumps my listings to the first page.",
-        link: "github.com/jasonmcheong?id=kijiji_reposter",
+        github: "github.com/jasonmcheong?id=kijiji_reposter",
         technologies: ["Python"],
     },
 ]
