@@ -42,14 +42,42 @@ const Link = styled.a`
 const Project = ({ className, project, onClick }) => {
     const data = useStaticQuery(graphql`
         query {
-            Kijiji_BG: file(relativePath: { eq: "kijiji-bg.jpg" }) {
+            visitorvalet_bg: file(relativePath: { eq: "visitorvalet-bg.jpg" }) {
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
-            VisitorValet_BG: file(relativePath: { eq: "visitor-valet-bg.jpg" }) {
+            applications_bg: file(relativePath: { eq: "applications-bg.jpg" }) {
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            automations_bg: file(relativePath: { eq: "automations-bg.jpg" }) {
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            pegasus_bg: file(relativePath: { eq: "pegasus-imagery-bg.jpg" }) {
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            ea_mondo_bg: file(relativePath: { eq: "ea-mondo-bg.jpg" }) {
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            kijiji_bg: file(relativePath: { eq: "kijiji-bg.jpg" }) {
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid
