@@ -1,8 +1,18 @@
 import React from "react"
+import styled from "styled-components"
 import { v4 as uuidv4 } from "uuid"
 
 import Container from "components/Utils/container"
 import Project from "components/Projects/project"
+
+const ProjectWrapper = styled.div`
+    display: grid;
+    gap: 3rem;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+`
 
 const projects = [
     {
@@ -15,10 +25,12 @@ const projects = [
 ]
 
 const Projects = () => (
-    <Container title="Projects">
-        {projects.map(project => {
-            return <Project key={uuidv4()} project={project} />
-        })}
+    <Container id="projects" title="Projects">
+        <ProjectWrapper>
+            {projects.map(project => {
+                return <Project key={uuidv4()} project={project} />
+            })}
+        </ProjectWrapper>
     </Container>
 )
 

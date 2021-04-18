@@ -9,17 +9,37 @@ const StyledHeader = styled.header`
     position: sticky;
     top: 0;
     left: 0;
+    height: 0;
     z-index: 1000;
+
+    @media screen and (min-width: 992px) {
+        width: 35rem;
+        height: 0;
+    }
 `
 const Navbar = styled.div`
     display: flex;
     justify-content: space-between;
-    height: 10vh;
+    height: 6rem;
     color: #ffffff;
     background: #343353;
+    border-right: 1px solid rgb(255 255 255 / 10%);
+
+    @media screen and (min-width: 992px) {
+        height: 10vh;
+    }
 `
 const Logo = styled(Img)`
-    margin: 0.75rem 1rem;
+    width: 4rem;
+    height: 4rem;
+    margin: 1.2rem 1rem;
+
+    @media screen and (min-width: 992px) {
+        display: block;
+        width: 8rem;
+        height: 8rem;
+        margin: 2rem auto;
+    }
 `
 const Toggle = styled.div`
     display: flex;
@@ -28,6 +48,10 @@ const Toggle = styled.div`
 
     &:hover {
         cursor: pointer;
+    }
+
+    @media screen and (min-width: 992px) {
+        display: none;
     }
 `
 const Hamburger = styled.div`
@@ -67,31 +91,55 @@ const Header = () => {
             logo: file(relativePath: { eq: "logo.png" }) {
                 name
                 childImageSharp {
-                    fixed(width: 40, height: 40) {
-                        ...GatsbyImageSharpFixed
+                    fluid {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
         }
     `)
 
+    const windowSize = useWindowSize()
     const [menu, setMenu] = useState(false)
 
     useEffect(() => {
-        document.body.style.overflow = menu ? "hidden" : null
-    }, [menu])
+        if (windowSize.width < 992) {
+            document.body.style.overflow = menu ? "hidden" : null
+        }
+    }, [menu, windowSize])
 
     return (
-        <StyledHeader>
+        <StyledHeader open={menu}>
             <Navbar>
-                <Logo fixed={data.logo.childImageSharp.fixed} alt={data.logo.name} />
+                <Logo fluid={data.logo.childImageSharp.fluid} alt={data.logo.name} />
                 <Toggle onClick={() => setMenu(!menu)}>
                     <Hamburger open={menu} />
                 </Toggle>
             </Navbar>
-            {menu && <Navigation />}
+            <Navigation open={menu} close={() => setMenu(false)} />
         </StyledHeader>
     )
+}
+
+function useWindowSize() {
+    const [windowSize, setWindowSize] = useState({
+        width: undefined,
+        height: undefined,
+    })
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            })
+        }
+        window.addEventListener("resize", handleResize)
+        handleResize()
+
+        return () => window.removeEventListener("resize", handleResize)
+    }, [])
+    return windowSize
 }
 
 export default Header

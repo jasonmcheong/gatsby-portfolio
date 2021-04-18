@@ -6,23 +6,25 @@ import Header from "components/Layout/header"
 
 import "styles/main.css"
 
-const Main = styled.main``
+const StyledLayout = styled.div`
+    @media screen and (min-width: 992px) {
+        display: flex;
+    }
+`
+const Main = styled.main`
+    width: 100%;
+    margin: 0 auto;
+`
+const Footer = styled.footer`
+    margin-top: 2rem;
+`
 
 const Layout = ({ children }) => {
     return (
-        <>
+        <StyledLayout>
             <Header />
             <Main>{children}</Main>
-            <footer
-                style={{
-                    marginTop: `2rem`,
-                }}
-            >
-                © {new Date().getFullYear()}, Built with
-                {` `}
-                <a href="https://www.gatsbyjs.com">Gatsby</a>
-            </footer>
-        </>
+        </StyledLayout>
     )
 }
 

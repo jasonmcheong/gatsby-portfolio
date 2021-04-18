@@ -39,9 +39,16 @@ const Timeline = styled.p`
 `
 const Projects = styled.div`
     display: grid;
-    grid-template-columns;
     gap: 3rem;
     margin-top: 2rem;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 `
 
 const jobs = [
@@ -112,7 +119,7 @@ const Experience = () => {
     `)
 
     return (
-        <Container title="Experience">
+        <Container id="experience" title="Experience">
             <Jobs>
                 {jobs.map(job => {
                     return (

@@ -31,7 +31,7 @@ const Link = styled.a`
     width: 100%;
     margin-top: 1rem;
     padding: 0.5rem 0;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: #ffffff;
     background: #ff4c61;
@@ -43,6 +43,7 @@ const Project = ({ className, project, onClick }) => {
     const data = useStaticQuery(graphql`
         query {
             visitorvalet_bg: file(relativePath: { eq: "visitorvalet-bg.jpg" }) {
+                name
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid
@@ -50,6 +51,7 @@ const Project = ({ className, project, onClick }) => {
                 }
             }
             applications_bg: file(relativePath: { eq: "applications-bg.jpg" }) {
+                name
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid
@@ -57,6 +59,7 @@ const Project = ({ className, project, onClick }) => {
                 }
             }
             automations_bg: file(relativePath: { eq: "automations-bg.jpg" }) {
+                name
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid
@@ -64,6 +67,7 @@ const Project = ({ className, project, onClick }) => {
                 }
             }
             pegasus_bg: file(relativePath: { eq: "pegasus-imagery-bg.jpg" }) {
+                name
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid
@@ -71,6 +75,7 @@ const Project = ({ className, project, onClick }) => {
                 }
             }
             ea_mondo_bg: file(relativePath: { eq: "ea-mondo-bg.jpg" }) {
+                name
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid
@@ -78,6 +83,7 @@ const Project = ({ className, project, onClick }) => {
                 }
             }
             kijiji_bg: file(relativePath: { eq: "kijiji-bg.jpg" }) {
+                name
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid
@@ -89,7 +95,7 @@ const Project = ({ className, project, onClick }) => {
 
     return (
         <Container className={className} onClick={onClick}>
-            <Screenshot fluid={data[project.background].childImageSharp.fluid} alt="Jason Cheong Headshot" />
+            <Screenshot fluid={data[project.background].childImageSharp.fluid} alt={data[project.background].name} />
             <Content>
                 <Title>{project.name}</Title>
                 <Description>{project.description}</Description>

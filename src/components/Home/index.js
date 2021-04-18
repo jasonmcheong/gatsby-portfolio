@@ -11,10 +11,13 @@ const Container = styled.section`
     align-items: center;
     color: #fff;
     background: #343353;
-    height: 90vh;
+    width: 100%;
+    height: 100vh;
 `
 const Center = styled.div``
 const Logo = styled(Img)`
+    width: 15rem;
+    height: 15rem;
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 3rem;
@@ -39,8 +42,8 @@ const Home = () => {
             logo: file(relativePath: { eq: "logo.png" }) {
                 name
                 childImageSharp {
-                    fixed(width: 100, height: 100) {
-                        ...GatsbyImageSharpFixed
+                    fluid {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -50,7 +53,7 @@ const Home = () => {
     return (
         <Container>
             <Center>
-                <Logo fixed={data.logo.childImageSharp.fixed} alt={data.logo.name} />
+                <Logo fluid={data.logo.childImageSharp.fluid} alt={data.logo.name} />
                 <Name>Jason Cheong</Name>
                 <Title>Aspiring tech guru</Title>
                 <SocialMedia>

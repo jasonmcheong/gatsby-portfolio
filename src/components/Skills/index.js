@@ -7,8 +7,16 @@ import Container from "components/Utils/container"
 const SkillWrapper = styled.div`
     display: grid;
     gap: 3rem 1rem;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (min-width: 992px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
 `
 const Skill = styled.div`
     text-align: center;
@@ -56,7 +64,7 @@ const Skills = () => {
     `)
 
     return (
-        <Container title="Skills">
+        <Container id="skills" title="Skills">
             <SkillWrapper>
                 {Object.keys(data).map(key => {
                     return (

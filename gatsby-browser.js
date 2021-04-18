@@ -5,6 +5,3 @@
  */
 
 // You can delete this file if you're not using it
-const portal = document.createElement("div")
-portal.id = "modal"
-document.body.appendChild(portal)
