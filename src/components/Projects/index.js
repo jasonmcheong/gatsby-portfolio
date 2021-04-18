@@ -10,6 +10,7 @@ const projects = [
         description: "A fun little automation that bumps my listings to the first page.",
         github: "github.com/jasonmcheong?id=kijiji_reposter",
         technologies: ["Python"],
+        background: "Kijiji_BG",
     },
 ]
 

@@ -42,7 +42,14 @@ const Link = styled.a`
 const Project = ({ className, project, onClick }) => {
     const data = useStaticQuery(graphql`
         query {
-            background: file(relativePath: { eq: "kijiji-bg.jpg" }) {
+            Kijiji_BG: file(relativePath: { eq: "kijiji-bg.jpg" }) {
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            VisitorValet_BG: file(relativePath: { eq: "visitor-valet-bg.jpg" }) {
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid
@@ -54,7 +61,7 @@ const Project = ({ className, project, onClick }) => {
 
     return (
         <Container className={className} onClick={onClick}>
-            <Screenshot fluid={data.background.childImageSharp.fluid} alt="Jason Cheong Headshot" />
+            <Screenshot fluid={data[project.background].childImageSharp.fluid} alt="Jason Cheong Headshot" />
             <Content>
                 <Title>{project.name}</Title>
                 <Description>{project.description}</Description>
