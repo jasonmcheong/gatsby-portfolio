@@ -5,16 +5,15 @@ import { AiOutlineHome, AiOutlineIdcard, AiOutlineUnorderedList, AiOutlineCode, 
 const Container = styled.nav`
     display: grid;
     gap: 6rem;
-    height: 100vh;
+    height: 90vh;
     padding: 2rem;
-`
-const Heading = styled.h1`
-    align-self: center;
+    background: #faf9ff;
 `
 const List = styled.ul`
     display: grid;
-    gap: 0.5rem;
+    gap: 1.5rem;
     margin: 0;
+    padding-top: 5rem;
 `
 const ListItem = styled.li`
     display: flex;
@@ -25,7 +24,7 @@ const ListItem = styled.li`
 const Content = styled.span`
     font-size: 2.4rem;
     font-weight: bold;
-    margin-left: 1.5rem;
+    margin: 0.5rem 0 0 1.5rem;
 `
 const Footer = styled.div`
     display: flex;
@@ -48,7 +47,6 @@ const Copyright = styled.span`
 
 const Navigation = () => (
     <Container>
-        <Heading>Jason Cheong</Heading>
         <List>
             <ListItem>
                 <AiOutlineHome /> <Content>Home</Content>
@@ -69,13 +67,13 @@ const Navigation = () => (
         <Footer>
             <SocialMedia>
                 <Link href="mailto:jasonmcheong@gmail.com">
-                    <AiOutlineMail fill="#000000" />
+                    <AiOutlineMail fill="#282828" />
                 </Link>
                 <Link href="https://www.linkedin.com/in/jasonmcheong/" target="_blank" rel="noreferrer">
-                    <AiFillLinkedin fill="#0077B5" />
+                    <AiFillLinkedin fill="#282828" />
                 </Link>
                 <Link href="https://github.com/jasonmcheong" target="_blank" rel="noreferrer">
-                    <AiOutlineGithub fill="#171516" />
+                    <AiOutlineGithub fill="#282828" />
                 </Link>
             </SocialMedia>
             <Copyright>© {new Date().getFullYear()} All rights reseverd.</Copyright>

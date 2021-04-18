@@ -5,9 +5,10 @@ import styled from "styled-components"
 import { AiOutlineLink, AiOutlineGithub } from "react-icons/ai"
 
 const Container = styled.div`
-    background: #ffe4b5;
+    color: #282828;
+    background: #ffffff;
     border-radius: 7px;
-    box-shadow: 0px 5px 12px 4px #ebebeb;
+    box-shadow: 0px 5px 12px 4px rgb(40 40 40 / 12%);
 `
 const Screenshot = styled(Img)`
     height: 15rem;
@@ -21,19 +22,27 @@ const Title = styled.h4`
 `
 const Description = styled.p``
 const ButtonContainer = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 `
 const Link = styled.a`
-    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: #ff4c61;
+    border: none;
+    border-radius: 25px;
 `
 
 const Project = ({ className, project, onClick }) => {
     const data = useStaticQuery(graphql`
         query {
-            background: file(relativePath: { eq: "webb-dark.png" }) {
+            background: file(relativePath: { eq: "kijiji-bg.jpg" }) {
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid
@@ -53,12 +62,14 @@ const Project = ({ className, project, onClick }) => {
                     <ButtonContainer>
                         {project.link && (
                             <Link href={project.link} target="_blank" rel="noreferrer">
-                                <AiOutlineLink size="3.5rem" fill="#000" />
+                                View Project
+                                <AiOutlineLink size="2.6rem" fill="#ffffff" style={{ marginLeft: "0.5rem" }} />
                             </Link>
                         )}
                         {project.github && (
                             <Link href={project.github} target="_blank" rel="noreferrer">
-                                <AiOutlineGithub size="3.5rem" fill="#000" />
+                                View on GitHub
+                                <AiOutlineGithub size="2.4rem" fill="#ffffff" style={{ marginLeft: "0.5rem" }} />
                             </Link>
                         )}
                     </ButtonContainer>

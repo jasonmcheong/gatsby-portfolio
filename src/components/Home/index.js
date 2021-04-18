@@ -9,16 +9,15 @@ const Container = styled.section`
     display: grid;
     justify-content: center;
     align-items: center;
-    background: PapayaWhip;
-    height: 100vh;
+    color: #fff;
+    background: #343353;
+    height: 90vh;
 `
 const Center = styled.div``
-const Headshot = styled(Img)`
-    width: 10rem;
-    height: 10rem;
+const Logo = styled(Img)`
     left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 `
 const Name = styled.h1``
 const Title = styled.p`
@@ -37,10 +36,11 @@ const Link = styled.a``
 const Home = () => {
     const data = useStaticQuery(graphql`
         query {
-            headshot: file(relativePath: { eq: "gatsby-icon.png" }) {
+            logo: file(relativePath: { eq: "logo.png" }) {
+                name
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid
+                    fixed(width: 100, height: 100) {
+                        ...GatsbyImageSharpFixed
                     }
                 }
             }
@@ -50,18 +50,18 @@ const Home = () => {
     return (
         <Container>
             <Center>
-                <Headshot fluid={data.headshot.childImageSharp.fluid} alt="Jason Cheong Headshot" />
+                <Logo fixed={data.logo.childImageSharp.fixed} alt={data.logo.name} />
                 <Name>Jason Cheong</Name>
                 <Title>Aspiring tech guru</Title>
                 <SocialMedia>
                     <Link href="mailto:jasonmcheong@gmail.com">
-                        <AiOutlineMail fill="#000000" />
+                        <AiOutlineMail fill="#ffffff" />
                     </Link>
                     <Link href="https://www.linkedin.com/in/jasonmcheong/" target="_blank" rel="noreferrer">
-                        <AiFillLinkedin fill="#0077B5" />
+                        <AiFillLinkedin fill="#ffffff" />
                     </Link>
                     <Link href="https://github.com/jasonmcheong" target="_blank" rel="noreferrer">
-                        <AiOutlineGithub fill="#171516" />
+                        <AiOutlineGithub fill="#ffffff" />
                     </Link>
                 </SocialMedia>
             </Center>

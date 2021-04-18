@@ -22,7 +22,7 @@ const Job = styled.div`
         left: 0.9rem;
         width: 2px;
         height: calc(100% - 2rem);
-        background: #000;
+        background: #282828;
     }
 `
 const Bullseye = styled.img`
@@ -35,7 +35,7 @@ const Bullseye = styled.img`
 const Company = styled.h3``
 const Role = styled.span``
 const Timeline = styled.p`
-    opacity: 0.8;
+    opacity: 0.9;
 `
 const Projects = styled.div`
     display: grid;

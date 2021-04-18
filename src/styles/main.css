@@ -133,17 +133,21 @@ table {
 :root {
     font-size: 62.5%;
     font-family: "Rubik", sans-serif;
-    letter-spacing: -1;
 }
 * {
     box-sizing: border-box;
+}
+body {
+    color: #282828;
+    background: #faf9ff;
 }
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+button {
     font-weight: bolder;
 }
 h1 {
@@ -163,5 +167,8 @@ p,
 span {
     font-size: 1.4rem;
     line-height: 1.4;
+    text-decoration: none;
+}
+a {
     text-decoration: none;
 }
