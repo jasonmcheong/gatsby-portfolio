@@ -65,9 +65,38 @@ const SocialMedia = styled.div`
     margin-bottom: 2rem;
 `
 const Link = styled.a`
+    transition: all 0.3s ease-in-out;
     display: flex;
     align-items: center;
     color: #ffffff;
+
+    &:hover {
+        color: #ffd05c;
+    }
+`
+const MailboxIcon = styled(AiOutlineMail)`
+    transition: all 0.3s ease-in-out;
+    fill: #ffffff;
+
+    &:hover {
+        fill: #ffd05c;
+    }
+`
+const LinkedInIcon = styled(AiFillLinkedin)`
+    transition: all 0.3s ease-in-out;
+    fill: #ffffff;
+
+    &:hover {
+        fill: #ffd05c;
+    }
+`
+const GitHubIcon = styled(AiOutlineGithub)`
+    transition: all 0.3s ease-in-out;
+    fill: #ffffff;
+
+    &:hover {
+        fill: #ffd05c;
+    }
 `
 const Copyright = styled.span`
     font-size: 1.2rem;
@@ -107,13 +136,13 @@ const Navigation = ({ open, close }) => {
             <Footer>
                 <SocialMedia>
                     <Link href="mailto:jasonmcheong@gmail.com">
-                        <AiOutlineMail fill="#ffffff" />
+                        <MailboxIcon />
                     </Link>
                     <Link href="https://www.linkedin.com/in/jasonmcheong/" target="_blank" rel="noreferrer">
-                        <AiFillLinkedin fill="#ffffff" />
+                        <LinkedInIcon />
                     </Link>
                     <Link href="https://github.com/jasonmcheong" target="_blank" rel="noreferrer">
-                        <AiOutlineGithub fill="#ffffff" />
+                        <GitHubIcon />
                     </Link>
                 </SocialMedia>
                 <Copyright>© {new Date().getFullYear()} All rights reseverd.</Copyright>

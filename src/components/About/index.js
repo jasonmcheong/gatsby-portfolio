@@ -8,21 +8,22 @@ const Content = styled.div`
     background: #ffffff;
     border-radius: 7px;
     box-shadow: 0px 5px 12px 4px rgb(40 40 40 / 12%);
-
-    @media screen and (min-width: 992px) {
-        width: 70%;
-        margin: 0 auto;
-    }
 `
 const Description = styled.p``
 const Button = styled.button`
-    width: 100%;
+    transition: all 0.3s ease-in-out;
+    width: 25rem;
     margin-top: 2rem;
     padding: 1rem 0;
     color: #ffffff;
     background: #ff4c61;
     border: none;
     border-radius: 25px;
+
+    &:hover {
+        cursor: pointer;
+        background: #e64457;
+    }
 `
 
 const About = () => (

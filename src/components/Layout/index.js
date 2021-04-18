@@ -6,6 +6,10 @@ import Header from "components/Layout/header"
 
 import "styles/main.css"
 
+if (typeof window !== "undefined") {
+    require("smooth-scroll")('a[href*="#"]')
+}
+
 const StyledLayout = styled.div`
     @media screen and (min-width: 992px) {
         display: flex;
@@ -14,9 +18,6 @@ const StyledLayout = styled.div`
 const Main = styled.main`
     width: 100%;
     margin: 0 auto;
-`
-const Footer = styled.footer`
-    margin-top: 2rem;
 `
 
 const Layout = ({ children }) => {

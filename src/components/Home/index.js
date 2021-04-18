@@ -35,6 +35,30 @@ const SocialMedia = styled.div`
     margin: 2rem auto;
 `
 const Link = styled.a``
+const MailboxIcon = styled(AiOutlineMail)`
+    transition: all 0.3s ease-in-out;
+    fill: #ffffff;
+
+    &:hover {
+        fill: #ffd05c;
+    }
+`
+const LinkedInIcon = styled(AiFillLinkedin)`
+    transition: all 0.3s ease-in-out;
+    fill: #ffffff;
+
+    &:hover {
+        fill: #ffd05c;
+    }
+`
+const GitHubIcon = styled(AiOutlineGithub)`
+    transition: all 0.3s ease-in-out;
+    fill: #ffffff;
+
+    &:hover {
+        fill: #ffd05c;
+    }
+`
 
 const Home = () => {
     const data = useStaticQuery(graphql`
@@ -58,13 +82,13 @@ const Home = () => {
                 <Title>Aspiring tech guru</Title>
                 <SocialMedia>
                     <Link href="mailto:jasonmcheong@gmail.com">
-                        <AiOutlineMail fill="#ffffff" />
+                        <MailboxIcon />
                     </Link>
                     <Link href="https://www.linkedin.com/in/jasonmcheong/" target="_blank" rel="noreferrer">
-                        <AiFillLinkedin fill="#ffffff" />
+                        <LinkedInIcon />
                     </Link>
                     <Link href="https://github.com/jasonmcheong" target="_blank" rel="noreferrer">
-                        <AiOutlineGithub fill="#ffffff" />
+                        <GitHubIcon />
                     </Link>
                 </SocialMedia>
             </Center>

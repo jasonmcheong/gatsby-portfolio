@@ -25,10 +25,11 @@ const ButtonContainer = styled.div`
     margin-top: 1.5rem;
 `
 const Link = styled.a`
+    transition: all 0.3s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 25rem;
     margin-top: 1rem;
     padding: 0.5rem 0;
     font-size: 1.4rem;
@@ -37,6 +38,10 @@ const Link = styled.a`
     background: #ff4c61;
     border: none;
     border-radius: 25px;
+
+    &:hover {
+        background: #e64457;
+    }
 `
 
 const Project = ({ className, project, onClick }) => {
