@@ -1,4 +1,6 @@
 import React from "react"
+import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
@@ -21,8 +23,25 @@ const Main = styled.main`
 `
 
 const Layout = ({ children }) => {
+    const data = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    title
+                    description
+                }
+            }
+        }
+    `)
+
     return (
         <StyledLayout>
+            <Helmet>
+                <html lang="en" />
+                <meta charSet="utf-8" />
+                <title>{data.site.siteMetadata.title}</title>
+                <meta name="description" content={data.site.siteMetadata.description} />
+            </Helmet>
             <Header />
             <Main>{children}</Main>
         </StyledLayout>
