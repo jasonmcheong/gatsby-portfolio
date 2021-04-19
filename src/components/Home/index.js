@@ -25,6 +25,7 @@ const Logo = styled(Img)`
 const Name = styled.h1``
 const Title = styled.p`
     font-size: 2.3rem;
+    text-align: center;
     margin-top: 0.5rem;
 `
 const SocialMedia = styled.div`

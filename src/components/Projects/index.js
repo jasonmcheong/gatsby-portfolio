@@ -18,7 +18,7 @@ const projects = [
     {
         name: "Kijiji Ad Reposter (Work in Progress)",
         description: "A fun little automation that bumps my listings to the first page.",
-        github: "github.com/jasonmcheong?id=kijiji_reposter",
+        github: "https://github.com/jasonmcheong/kijiji-ad-reposter",
         technologies: ["Python"],
         background: "kijiji_bg",
     },
